@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHEVALIS — Gratis Flasche sichern</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Arial', sans-serif; background: #f5f5f0; min-height: 100vh; }
+  .top-bar { height:5px; background: linear-gradient(90deg,#8B6914,#C9A227,#F0D060,#C9A227,#8B6914); }
+  .header { background:#000; padding:20px 24px; display:flex; align-items:center; gap:16px; }
+  .brand { font-size:22px; font-weight:800; color:#C9A227; letter-spacing:4px; }
+  .brand-sub { font-size:8px; color:#C9A227; letter-spacing:2px; opacity:.8; margin-top:2px; }
+  .hero { background:#fff; max-width:560px; margin:32px auto; border-radius:4px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+  .hero-header { background:#1a1a1a; padding:28px 32px; }
+  .hero-header h1 { font-size:20px; color:#C9A227; font-weight:700; line-height:1.3; }
+  .hero-header p { font-size:13px; color:rgba(201,162,39,.8); margin-top:6px; }
+  .hero-body { padding:28px 32px; }
+  .step { display:flex; gap:14px; align-items:flex-start; margin-bottom:20px; }
+  .step-num { background:#C9A227; color:#000; font-weight:800; font-size:13px; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .step-text { font-size:14px; line-height:1.5; color:#333; }
+  .amazon-btn { display:block; background:#FF9900; color:#000; text-decoration:none; font-weight:700; font-size:15px; text-align:center; padding:14px; border-radius:4px; margin:8px 0 24px; }
+  .amazon-btn:hover { background:#e68a00; }
+  .divider { border:none; border-top:1px solid #e5e5e5; margin:0 0 24px; }
+  .form-title { font-size:16px; font-weight:700; color:#1a1a1a; margin-bottom:6px; }
+  .form-sub { font-size:12px; color:#666; margin-bottom:18px; }
+  label { display:block; font-size:12px; font-weight:600; color:#444; margin-bottom:4px; margin-top:12px; }
+  input, textarea { width:100%; padding:10px; border:1.5px solid #ddd; border-radius:3px; font-size:14px; }
+  input:focus, textarea:focus { outline:none; border-color:#C9A227; }
+  .row2 { display:grid; grid-template-columns:120px 1fr; gap:10px; }
+  .upload-area { border:2px dashed #C9A227; border-radius:4px; padding:20px; text-align:center; background:#fffdf2; cursor:pointer; margin-top:12px; }
+  .upload-area input { display:none; }
+  .upload-label { font-size:13px; color:#8B6914; cursor:pointer; }
+  .submit-btn { width:100%; background:#000; color:#C9A227; font-weight:700; font-size:15px; padding:14px; border:none; border-radius:4px; margin-top:20px; cursor:pointer; letter-spacing:1px; }
+  .submit-btn:hover { background:#1a1a1a; }
+  .deadline { font-size:11px; color:#999; text-align:center; margin-top:12px; }
+  .footer { text-align:center; padding:20px; font-size:11px; color:#999; }
+</style>
+</head>
+<body>
+<div class="top-bar"></div>
+<div class="header">
+  <div>
+    <div class="brand">CHEVALIS</div>
+    <div class="brand-sub">NATÜRLICHER INSEKTENSCHUTZ</div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-header">
+    <h1>🐴 Gratis-Flasche sichern!</h1>
+    <p>Bewertung schreiben → Screenshot einreichen → 500ml kostenlos erhalten</p>
+  </div>
+  <div class="hero-body">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Schreibe jetzt deine Amazon-Bewertung für dein CHEVALIS-Produkt:</div>
+    </div>
+    <a class="amazon-btn" href="https://www.amazon.de/review/create-review?asin=ASIN_10L_RAUCH_TODO" target="_blank">
+      ⭐ Jetzt auf Amazon bewerten →
+    </a>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Mache einen Screenshot deiner abgegebenen Bewertung und fülle das Formular aus:</div>
+    </div>
+
+    <hr class="divider">
+    <div class="form-title">📦 Deine Gratis-Flasche anfordern</div>
+    <div class="form-sub">Wir schicken dir die neue CHEVALIS 500ml Natur-Flasche — kostenlos & versandkostenfrei!</div>
+
+    <form action="https://formspree.io/f/FORMSPREE_ID" method="POST" enctype="multipart/form-data">
+      <label>Vorname *</label>
+      <input type="text" name="vorname" required placeholder="Dein Vorname">
+      <label>Nachname *</label>
+      <input type="text" name="nachname" required placeholder="Dein Nachname">
+      <label>Straße & Hausnummer *</label>
+      <input type="text" name="strasse" required placeholder="Musterstraße 12">
+      <label>PLZ & Stadt *</label>
+      <div class="row2">
+        <input type="text" name="plz" required placeholder="12345" maxlength="5">
+        <input type="text" name="stadt" required placeholder="Musterstadt">
+      </div>
+      <div class="upload-area" onclick="document.getElementById('screenshot').click()">
+        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+        <div class="upload-label">📸 Screenshot der Bewertung hochladen<br><small style="color:#aaa">Tippe hier → Foto aus Galerie wählen</small></div>
+      </div>
+      <input type="hidden" name="produkt" value="CHEVALIS 10L Rauch">
+      <input type="hidden" name="_subject" value="CHEVALIS Bewertung + Gratis-Flasche Anfrage">
+      <button type="submit" class="submit-btn">✅ GRATIS-FLASCHE ANFORDERN</button>
+    </form>
+    <div class="deadline">⏰ Aktion gültig bis 31. Juli 2026</div>
+  </div>
+</div>
+
+<div class="footer">BERGBAD Wellness GmbH · Poppenbütteler Bogen 92 · 22399 Hamburg</div>
+<script>
+document.getElementById('screenshot').addEventListener('change', function(e) {
+  const area = this.closest('.upload-area');
+  if (this.files[0]) {
+    area.querySelector('.upload-label').innerHTML = '✅ ' + this.files[0].name;
+  }
+});
+</script>
+</body>
+</html>
